@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Menu, ArrowUpRight, Moon, Sun, X } from 'lucide-react';
+import { Menu, ArrowUpRight, X } from 'lucide-react';
 import Link from 'next/link';
 import {
   Sheet,
@@ -14,55 +14,6 @@ import {
 import { navLinks } from './site';
 
 const links = [...navLinks, ['/contact', '수업 문의하기'] as const];
-
-const THEME_KEY = 'chaeum-theme';
-
-/**
- * Renders both icons and lets CSS pick one from the `data-theme` attribute, so
- * the button never needs client state that could mismatch the server render.
- */
-export function ThemeToggle() {
-  useEffect(() => {
-    const media = window.matchMedia('(prefers-color-scheme: dark)');
-    const follow = () => {
-      let stored: string | null = null;
-      try {
-        stored = localStorage.getItem(THEME_KEY);
-      } catch {
-        stored = null;
-      }
-      if (!stored) {
-        document.documentElement.dataset.theme = media.matches
-          ? 'dark'
-          : 'light';
-      }
-    };
-    media.addEventListener('change', follow);
-    return () => media.removeEventListener('change', follow);
-  }, []);
-
-  return (
-    <button
-      type="button"
-      className="theme-toggle"
-      aria-label="밝은 모드와 어두운 모드 전환"
-      title="밝은 모드와 어두운 모드 전환"
-      onClick={() => {
-        const root = document.documentElement;
-        const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
-        root.dataset.theme = next;
-        try {
-          localStorage.setItem(THEME_KEY, next);
-        } catch {
-          /* private mode — the choice simply won't persist */
-        }
-      }}
-    >
-      <Sun size={19} className="theme-icon theme-icon-light" />
-      <Moon size={19} className="theme-icon theme-icon-dark" />
-    </button>
-  );
-}
 
 export function MobileNavigation() {
   const [open, setOpen] = useState(false);

@@ -11,113 +11,64 @@
     sans-serif;
 }
 :root {
-  --background: #fffdfa;
-  --foreground: #302333;
+  /* Elevation runs page → card → band. The page is a warm ivory so cards can
+     sit *above* it in luminance and actually read as raised; bands drop below
+     it. Near-white everywhere was what made the old palette feel thin. */
+  --background: #f4eeea;
+  --foreground: #2a1c2c;
   --primary: #62264e;
   --primary-foreground: #fff;
   --plum: #62264e;
   --plum-deep: #481939;
-  --plum-ink: #62264e;
-  --plum-soft: #89637c;
-  --serif-ink: #9c8092;
-  --muted: #6c6270;
-  --ink-2: #6f5e6b;
-  --ink-3: #7b6874;
-  --border: #e5dce2;
-  --line: #e6d7e0;
-  --line-soft: #eee2e9;
-  --line-strong: #d7becd;
+  --plum-ink: #5d2249;
+  --plum-soft: #7d5570;
+  --serif-ink: #8e7085;
+  --muted: #665c6a;
+  --ink-2: #665466;
+  --ink-3: #6f5c6b;
+  --border: #e0d2db;
+  --line: #ded0d9;
+  --line-soft: #e9dbe4;
+  --line-strong: #c9adbe;
   --surface: #ffffff;
   --field-bg: #ffffff;
-  --band: #f5eff3;
-  --tint: #fbf1f6;
-  --tint-green: #eff4ef;
-  --tint-purple: #f0ebf7;
-  --tint-peach: #f9eee8;
-  --tint-yellow: #f7f3e6;
-  --chip-bg: #ffffff9c;
-  --header-bg: #fffdfaf2;
-  --caption-bg: #fffdfae8;
-  --ghost: #e3cbd9;
-  --page-hero-from: #f7eef4;
+  --band: #eae0e6;
+  --tint: #fdf5f9;
+  --tint-green: #f4f9f5;
+  --tint-purple: #f7f2fc;
+  --tint-peach: #fdf3ec;
+  --tint-yellow: #fbf6e9;
+  --chip-bg: #ffffffcc;
+  --header-bg: #f4eeeaf2;
+  --caption-bg: #fffdfcee;
+  --ghost: #ddc2d4;
+  --page-hero-from: #eadae4;
   --deep-from: #5a2647;
-  --deep-to: #421633;
+  --deep-to: #3d1330;
   --deep-fg: #fff4fb;
   --deep-muted: #dcc0d3;
   --deep-accent: #d4afc9;
   --deep-serif: #c99ab8;
   --deep-line: #7d5069;
   --deep-veil: #ffffff14;
-  --shadow-card: 0 2px 10px rgb(73 34 61 / 5%);
-  --shadow-lift: 0 24px 50px rgb(73 34 61 / 14%);
+  --shadow-card: 0 3px 14px rgb(60 24 48 / 7%);
+  --shadow-lift: 0 26px 54px rgb(60 24 48 / 16%);
   --frame: #ffffff;
-  --frame-line: #ece5e9;
-  --frame-shadow: 0 12px 40px #4e25451a;
-  --deco: #ceb6c9;
-  --deco-soft: #eadbe4;
-  --deco-orb: #eed9e7;
-  --stamp-bg: #f1dce9;
-  --stamp-line: #e1c4d7;
-  --focus: #b376a1;
-  --progress-from: #c78eb4;
-  --progress-to: #62264e;
+  --frame-line: #e8dee5;
+  --frame-shadow: 0 14px 44px rgb(60 24 48 / 14%);
+  --deco: #c6a9c0;
+  --deco-soft: #e4d2df;
+  --deco-orb: #ecd4e4;
+  --stamp-bg: #eed6e6;
+  --stamp-line: #dbbad2;
+  --focus: #9c4f83;
+  --progress-from: #b874a1;
+  --progress-to: #5d2249;
   --ring: #923e79;
   --radius: 0.75rem;
   --font-serif:
     'Playfair Display', Georgia, 'Apple SD Gothic Neo', 'Malgun Gothic', serif;
   color-scheme: light;
-}
-[data-theme='dark'] {
-  --background: #171019;
-  --foreground: #efe3ec;
-  --primary-foreground: #fff;
-  --plum: #6f2b59;
-  --plum-deep: #87386e;
-  --plum-ink: #dda6c6;
-  --plum-soft: #c793b2;
-  --serif-ink: #b08ba4;
-  --muted: #b4a3b0;
-  --ink-2: #c8b6c3;
-  --ink-3: #a08d9d;
-  --border: #372b3a;
-  --line: #3b2d3f;
-  --line-soft: #342839;
-  --line-strong: #59415c;
-  --surface: #221927;
-  --field-bg: #2b2030;
-  --band: #1d1520;
-  --tint: #241a27;
-  --tint-green: #1e241f;
-  --tint-purple: #231d2c;
-  --tint-peach: #28201d;
-  --tint-yellow: #262319;
-  --chip-bg: #ffffff10;
-  --header-bg: #171019ee;
-  --caption-bg: #221927e8;
-  --ghost: #4b3450;
-  --page-hero-from: #221527;
-  --deep-from: #3b1c31;
-  --deep-to: #2a1223;
-  --deep-fg: #f6e6f0;
-  --deep-muted: #cba9be;
-  --deep-accent: #c99ab8;
-  --deep-serif: #bb8ba8;
-  --deep-line: #5d3a4f;
-  --deep-veil: #ffffff0e;
-  --shadow-card: 0 2px 10px rgb(0 0 0 / 30%);
-  --shadow-lift: 0 24px 50px rgb(0 0 0 / 45%);
-  --frame: #2b2030;
-  --frame-line: #3f3145;
-  --frame-shadow: 0 12px 40px rgb(0 0 0 / 55%);
-  --deco: #4a3550;
-  --deco-soft: #3a2b3f;
-  --deco-orb: #33203a;
-  --stamp-bg: #33213a;
-  --stamp-line: #573f5c;
-  --focus: #d69cc2;
-  --progress-from: #b876a4;
-  --progress-to: #e4b6d3;
-  color-scheme: dark;
 }
 * {
   box-sizing: border-box;
@@ -1631,42 +1582,6 @@ h2 {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-.theme-toggle {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  flex-shrink: 0;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--surface);
-  color: var(--plum-ink);
-  cursor: pointer;
-  transition:
-    border-color 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease;
-}
-.theme-toggle:hover {
-  border-color: var(--line-strong);
-  transform: translateY(-2px);
-}
-.theme-icon {
-  grid-area: 1 / 1;
-  transition:
-    opacity 0.3s ease,
-    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.theme-icon-dark,
-[data-theme='dark'] .theme-icon-light {
-  opacity: 0;
-  transform: rotate(-70deg) scale(0.5);
-}
-.theme-icon-light,
-[data-theme='dark'] .theme-icon-dark {
-  opacity: 1;
-  transform: none;
 }
 .mobile-menu-trigger {
   display: none;

@@ -30,29 +30,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    // The inline script below stamps `data-theme` before React hydrates, so the
-    // attribute is expected to differ from the server render.
-    <html lang="ko" suppressHydrationWarning>
+    <html lang="ko">
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <meta
-          name="theme-color"
-          content="#62264e"
-          media="(prefers-color-scheme: light)"
-        />
-        <meta
-          name="theme-color"
-          content="#171019"
-          media="(prefers-color-scheme: dark)"
-        />
-        <script
-          // Applies the saved (or system) theme before first paint so the page
-          // never flashes the wrong palette.
-          dangerouslySetInnerHTML={{
-            __html:
-              "try{var t=localStorage.getItem('chaeum-theme');document.documentElement.dataset.theme=t||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){document.documentElement.dataset.theme='light'}",
-          }}
-        />
+        <meta name="theme-color" content="#62264e" />
         <link rel="preload" as="image" href="/images/explore.webp" />
         <link
           rel="preconnect"

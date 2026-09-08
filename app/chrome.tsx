@@ -10,7 +10,7 @@ import {
   Power,
 } from 'lucide-react';
 import Link from 'next/link';
-import { MobileNavigation, ThemeToggle } from './motion';
+import { MobileNavigation } from './motion';
 import { contact, navLinks, programs } from './site';
 
 export function SiteHeader() {
@@ -33,7 +33,6 @@ export function SiteHeader() {
         ))}
       </nav>
       <div className="header-actions">
-        <ThemeToggle />
         <Link className="nav-contact" href="/contact">
           수업 문의하기 <ArrowUpRight size={17} />
         </Link>
