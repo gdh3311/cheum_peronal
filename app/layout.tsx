@@ -1,7 +1,12 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { MobileCta, SiteFooter, SiteHeader } from './chrome';
+import { MotionEnhancements } from './motion';
 export const metadata: Metadata = {
-  title: '채움크리에이티브 | 호기심을 켜고, 가능성을 채우다',
+  title: {
+    default: '채움크리에이티브 | 호기심을 켜고, 가능성을 채우다',
+    template: '%s | 채움크리에이티브',
+  },
   description:
     '학교로 찾아가는 진로직업체험 채움 ON. AI·디지털, 로봇·과학, 디자인 등 5개 분야의 체험과 학교 맞춤형 프로그램을 만나보세요.',
   openGraph: {
@@ -50,7 +55,32 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500..800;1,400..700&display=swap"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <MotionEnhancements />
+        <a className="skip-link" href="#main">
+          본문 바로가기
+        </a>
+        <SiteHeader />
+        <main id="main">{children}</main>
+        <SiteFooter />
+        <MobileCta />
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: '채움크리에이티브',
+              alternateName: '채움 ON',
+              description:
+                '학교로 찾아가는 진로직업체험 프로그램을 운영하는 교육 기업',
+              email: 'chaeum-lab@naver.com',
+              telephone: '+82-10-6460-8659',
+            }),
+          }}
+        />
+      </body>
     </html>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Menu, ArrowUpRight, X } from 'lucide-react';
+import Link from 'next/link';
 import {
   Sheet,
   SheetTrigger,
@@ -10,14 +11,9 @@ import {
   SheetDescription,
   SheetClose,
 } from '@/components/ui/sheet';
+import { navLinks } from './site';
 
-const links = [
-  ['about', '채움 ON 소개'],
-  ['programs', '체험 프로그램'],
-  ['custom', '학교 맞춤 수업'],
-  ['moments', '수업 이야기'],
-  ['contact', '수업 문의하기'],
-];
+const links = [...navLinks, ['/contact', '수업 문의하기'] as const];
 
 export function MobileNavigation() {
   const [open, setOpen] = useState(false);
@@ -43,12 +39,12 @@ export function MobileNavigation() {
           호기심을 켜고, 가능성을 채우다.
         </SheetDescription>
         <nav aria-label="모바일 주 메뉴" className="mobile-links">
-          {links.map(([id, label], i) => (
-            <a key={id} href={`#${id}`} onClick={() => setOpen(false)}>
+          {links.map(([href, label], i) => (
+            <Link key={href} href={href} onClick={() => setOpen(false)}>
               <span>0{i + 1}</span>
               {label}
               <ArrowUpRight size={20} />
-            </a>
+            </Link>
           ))}
         </nav>
         <p className="mobile-menu-footer">
@@ -81,11 +77,15 @@ export function MotionEnhancements() {
           (s) => s.getBoundingClientRect().top <= window.innerHeight * 0.4,
         )
         .at(-1)?.id;
+      const path = window.location.pathname;
       document
         .querySelectorAll<HTMLAnchorElement>('.header nav a')
         .forEach((a) => {
-          if (a.hash === `#${current}`)
-            a.setAttribute('aria-current', 'location');
+          const url = new URL(a.href);
+          const active =
+            url.pathname === path &&
+            (url.hash ? url.hash === `#${current}` : path !== '/');
+          if (active) a.setAttribute('aria-current', 'page');
           else a.removeAttribute('aria-current');
         });
       frame = 0;
@@ -122,7 +122,7 @@ export function MotionEnhancements() {
     );
     document
       .querySelectorAll<HTMLElement>(
-        '.section-heading, .program-card, .method-layout > div, .custom-grid > div, .moments-grid figure, .process-card, .faq-intro, .faq-list, .contact-box',
+        '.section-heading, .program-card, .method-layout > div, .custom-grid > div, .moments-grid figure, .process-card, .faq-intro, .faq-list, .contact-box, .program-detail, .value-card, .page-cta-box, .about-story-grid > div',
       )
       .forEach((el, i) => {
         el.dataset.motionIndex = String(
