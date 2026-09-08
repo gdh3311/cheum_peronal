@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Menu, ArrowUpRight, X } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import {
   Sheet,
   SheetTrigger,
@@ -14,6 +15,52 @@ import {
 import { navLinks } from './site';
 
 const links = [...navLinks, ['/contact', '수업 문의하기'] as const];
+
+/**
+ * Client-side navigation lands at the top of the new page even when the URL
+ * carries a hash, so cross-page anchors (/programs#ai-digital, /#faq) never
+ * reach their target. The section also mounts after the URL changes, and the
+ * router resets scroll once more afterwards — so re-assert the position for a
+ * short window, instantly (a smooth scroll would be cut off mid-animation),
+ * and give up the moment the reader takes over.
+ */
+export function HashScroll() {
+  const pathname = usePathname();
+  useEffect(() => {
+    let frame = 0;
+    let stopped = false;
+    const release = () => {
+      stopped = true;
+    };
+    const jump = () => {
+      const id = decodeURIComponent(window.location.hash.slice(1));
+      if (!id) return;
+      stopped = false;
+      let tries = 0;
+      const attempt = () => {
+        if (stopped) return;
+        document
+          .getElementById(id)
+          ?.scrollIntoView({ behavior: 'instant', block: 'start' });
+        if (tries++ < 40) frame = requestAnimationFrame(attempt);
+      };
+      attempt();
+    };
+    jump();
+    window.addEventListener('hashchange', jump);
+    window.addEventListener('wheel', release, { passive: true });
+    window.addEventListener('touchstart', release, { passive: true });
+    window.addEventListener('keydown', release);
+    return () => {
+      window.removeEventListener('hashchange', jump);
+      window.removeEventListener('wheel', release);
+      window.removeEventListener('touchstart', release);
+      window.removeEventListener('keydown', release);
+      cancelAnimationFrame(frame);
+    };
+  }, [pathname]);
+  return null;
+}
 
 export function MobileNavigation() {
   const [open, setOpen] = useState(false);

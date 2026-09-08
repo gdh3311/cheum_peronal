@@ -92,7 +92,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: clip;
 }
 ::selection {
   background: var(--ghost);
@@ -2113,7 +2112,9 @@ h2 {
   padding: 44px 46px;
   background: var(--tint);
   box-shadow: var(--shadow-card);
-  scroll-margin-top: 120px;
+  /* Offset comes from html's scroll-padding-top; adding scroll-margin here
+     too would stack both and drop the section 228px below the header. */
+  scroll-margin-top: 12px;
 }
 /* Two classes so the per-field tints beat `.program-detail`, which is
    declared after the single-class `.green`/`.purple`/… rules. */

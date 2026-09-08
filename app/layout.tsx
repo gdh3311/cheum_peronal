@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { MobileCta, SiteFooter, SiteHeader } from './chrome';
-import { MotionEnhancements } from './motion';
+import { HashScroll, MotionEnhancements } from './motion';
 export const metadata: Metadata = {
   title: {
     default: '채움크리에이티브 | 호기심을 켜고, 가능성을 채우다',
@@ -57,6 +57,7 @@ export default function RootLayout({
       </head>
       <body>
         <MotionEnhancements />
+        <HashScroll />
         <a className="skip-link" href="#main">
           본문 바로가기
         </a>
