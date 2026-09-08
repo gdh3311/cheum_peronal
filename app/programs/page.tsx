@@ -51,7 +51,8 @@ export default function ProgramsPage() {
               <span className="card-en">{p.en}</span>
               <h2 id={`${p.slug}-title`}>{p.title}</h2>
               <p className="detail-intro">{p.intro}</p>
-              <ul className="detail-jobs">
+              {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
+              <ul className="detail-jobs" role="list">
                 {p.jobs.map((j) => (
                   <li key={j}>{j}</li>
                 ))}

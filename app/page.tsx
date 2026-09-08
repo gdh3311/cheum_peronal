@@ -170,7 +170,10 @@ export default function Home() {
               <span className="card-en">{p.en}</span>
               <h3>{p.title}</h3>
               <p className="card-description">{p.description}</p>
-              <ul>
+              {/* Redundant per spec, but Safari drops list semantics when
+                  list-style is none. */}
+              {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
+              <ul role="list">
                 {p.jobs.map((j) => (
                   <li key={j}>{j}</li>
                 ))}
@@ -346,7 +349,8 @@ export default function Home() {
             번거로운 준비 없이 네 단계면 충분합니다.
           </p>
         </div>
-        <ol className="process-grid">
+        {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
+        <ol className="process-grid" role="list">
           {processSteps.map((s, i) => (
             <li className="process-card" key={s.en}>
               <span className="process-index">STEP 0{i + 1}</span>

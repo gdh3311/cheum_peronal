@@ -24,6 +24,31 @@ const links = [...navLinks, ['/contact', '수업 문의하기'] as const];
  * short window, instantly (a smooth scroll would be cut off mid-animation),
  * and give up the moment the reader takes over.
  */
+/**
+ * A client-side route change swaps the content without a page load, so screen
+ * readers get no signal that anything happened. Announce the new title.
+ */
+export function RouteAnnouncer() {
+  const pathname = usePathname();
+  const [label, setLabel] = useState('');
+  const first = useRef(true);
+  useEffect(() => {
+    if (first.current) {
+      // The initial load is announced by the browser itself.
+      first.current = false;
+      return;
+    }
+    // The document title is committed a tick after the route does.
+    const timer = setTimeout(() => setLabel(document.title), 120);
+    return () => clearTimeout(timer);
+  }, [pathname]);
+  return (
+    <p aria-live="polite" aria-atomic="true" className="visually-hidden">
+      {label}
+    </p>
+  );
+}
+
 export function HashScroll() {
   const pathname = usePathname();
   useEffect(() => {
