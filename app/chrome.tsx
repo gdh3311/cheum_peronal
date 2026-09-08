@@ -10,7 +10,7 @@ import {
   Power,
 } from 'lucide-react';
 import Link from 'next/link';
-import { MobileNavigation } from './motion';
+import { MobileNavigation, ThemeToggle } from './motion';
 import { contact, navLinks, programs } from './site';
 
 export function SiteHeader() {
@@ -33,6 +33,7 @@ export function SiteHeader() {
         ))}
       </nav>
       <div className="header-actions">
+        <ThemeToggle />
         <Link className="nav-contact" href="/contact">
           수업 문의하기 <ArrowUpRight size={17} />
         </Link>
@@ -204,7 +205,7 @@ export function ContactBox() {
             placeholder="희망 일정과 궁금한 점을 편하게 적어주세요."
           />
         </label>
-        <button className="button light form-submit" type="submit">
+        <button className="button primary form-submit" type="submit">
           메일로 문의 보내기 <ArrowRight size={18} />
         </button>
         <small>
