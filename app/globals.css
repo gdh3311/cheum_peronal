@@ -2009,14 +2009,16 @@ h2 {
   .moments-grid figure:nth-child(even):hover {
     transform: translateY(16px);
   }
+  /* Keep decorations inside the viewport on phones. They used to reach
+     169px past the right edge, which showed as a horizontal scroll wherever
+     `overflow: clip` is unsupported. */
   .hero::before {
     width: 230px;
     height: 230px;
-    left: -170px;
+    left: -20px;
   }
   .hero::after {
-    right: -120px;
-    bottom: 70px;
+    display: none;
   }
 }
 @media (max-width: 520px) {
@@ -2032,19 +2034,21 @@ h2 {
   .hero-art {
     height: 390px;
   }
+  /* The polaroids are rotated, so their painted box is wider than `width`.
+     Keep them off the viewport edge instead of nudging them past it. */
   .photo-main {
-    width: 86%;
-    right: -3%;
+    width: 82%;
+    right: 0;
   }
   .photo-small {
-    width: 57%;
-    left: -2%;
+    width: 55%;
+    left: 0;
   }
   .art-note {
     left: 7px;
   }
   .round-stamp {
-    right: -2px;
+    right: 4px;
   }
   .section-heading h2,
   h2 {
