@@ -1897,6 +1897,16 @@ h2 {
     transform: none;
   }
 }
+@keyframes hero-art-in-mobile {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
 @keyframes float-main {
   0%,
   100% {
@@ -2559,8 +2569,8 @@ h2 {
 }
 @media (max-width: 850px) {
   .hero { grid-template-columns: 1fr; min-height: 0; gap: 14px; }
-  .hero-art { width: min(590px,100%); height: min(73vw,480px); min-height: 310px; }
-  .hero-collage { width: 112%; right: -6%; top: 0; }
+  .hero-art { width: min(590px,100%); height: min(73vw,480px); min-height: 310px; animation-name: hero-art-in-mobile; }
+  .hero-collage { width: 106%; right: -3%; top: 0; }
   .hero-art-kicker { bottom: 4%; font-size: 11px; }
   .custom-image img { aspect-ratio: 1.5; border-radius: 0; }
   .footer-logo { width: 160px; }
@@ -2570,7 +2580,7 @@ h2 {
   .brand-logo { width: 132px; }
   .hero-art { height: 81vw; min-height: 275px; }
   .hero-art-panel { inset: 10% 3% 11% 3%; border-radius: 25px 70px 25px 70px; }
-  .hero-collage { width: 119%; right: -9%; top: 4%; }
+  .hero-collage { top: 4%; }
   .hero-art-kicker { left: 9%; bottom: 5%; font-size: 9px; letter-spacing: .08em; }
   .custom-image { padding: 12px; border-radius: 35px 10px 35px 10px; }
 }
