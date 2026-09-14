@@ -1861,18 +1861,6 @@ h2 {
 .step:hover .step-arrow {
   transform: translate(4px, 4px);
 }
-.moments-grid figure {
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.moments-grid figure:nth-child(even) {
-  transform: translateY(26px);
-}
-.moments-grid figure:hover {
-  transform: translateY(-5px);
-}
-.moments-grid figure:nth-child(even):hover {
-  transform: translateY(18px);
-}
 .moments-grid figure > div {
   box-shadow: 0 18px 35px rgb(70 31 57 / 9%);
 }
@@ -2002,12 +1990,6 @@ h2 {
   }
   .program-note {
     margin-top: 2px;
-  }
-  .moments-grid figure:nth-child(even) {
-    transform: translateY(16px);
-  }
-  .moments-grid figure:nth-child(even):hover {
-    transform: translateY(16px);
   }
   /* Keep decorations inside the viewport on phones. They used to reach
      169px past the right edge, which showed as a horizontal scroll wherever
