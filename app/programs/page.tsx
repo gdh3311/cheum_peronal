@@ -72,7 +72,7 @@ export default function ProgramsPage() {
                 <dt>
                   <Clock3 size={16} /> 시간
                 </dt>
-                <dd>2차시 · 80–90분 (조정 가능)</dd>
+                <dd>2차시 · 80분 (조정 가능)</dd>
               </div>
               <div>
                 <dt>

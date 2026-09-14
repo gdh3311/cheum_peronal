@@ -14,57 +14,57 @@
   /* Elevation runs page → card → band. The page is a warm ivory so cards can
      sit *above* it in luminance and actually read as raised; bands drop below
      it. Near-white everywhere was what made the old palette feel thin. */
-  --background: #f4eeea;
-  --foreground: #2a1c2c;
-  --primary: #62264e;
-  --primary-foreground: #fff;
-  --plum: #62264e;
-  --plum-deep: #481939;
-  --plum-ink: #5d2249;
-  --plum-soft: #7d5570;
-  --serif-ink: #8e7085;
-  --muted: #665c6a;
-  --ink-2: #665466;
-  --ink-3: #6f5c6b;
-  --border: #e0d2db;
-  --line: #ded0d9;
-  --line-soft: #e9dbe4;
-  --line-strong: #c9adbe;
-  --surface: #ffffff;
-  --field-bg: #ffffff;
-  --band: #eae0e6;
-  --tint: #fdf5f9;
-  --tint-green: #f4f9f5;
-  --tint-purple: #f7f2fc;
-  --tint-peach: #fdf3ec;
-  --tint-yellow: #fbf6e9;
-  --chip-bg: #ffffffcc;
-  --header-bg: #f4eeeaf2;
-  --caption-bg: #fffdfcee;
-  --ghost: #ddc2d4;
-  --page-hero-from: #eadae4;
-  --deep-from: #5a2647;
-  --deep-to: #3d1330;
-  --deep-fg: #fff4fb;
-  --deep-muted: #dcc0d3;
-  --deep-accent: #d4afc9;
-  --deep-serif: #c99ab8;
-  --deep-line: #7d5069;
+  --background: #f1e4da;
+  --foreground: #332837;
+  --primary: #4e2f4b;
+  --primary-foreground: #f1e4da;
+  --plum: #4e2f4b;
+  --plum-deep: #392037;
+  --plum-ink: #4e2f4b;
+  --plum-soft: #70556d;
+  --serif-ink: #77556d;
+  --muted: #635764;
+  --ink-2: #594658;
+  --ink-3: #6c5c69;
+  --border: #dcc3ad;
+  --line: #dfc8b5;
+  --line-soft: #ead6c5;
+  --line-strong: #caa98f;
+  --surface: #fffaf6;
+  --field-bg: #fffaf6;
+  --band: #e9d0b6;
+  --tint: #fbf2eb;
+  --tint-green: #f4e9dd;
+  --tint-purple: #f5e8e2;
+  --tint-peach: #f8e7d8;
+  --tint-yellow: #f8eddf;
+  --chip-bg: #fffaf6d9;
+  --header-bg: #4e2f4bf2;
+  --caption-bg: #fffaf6ed;
+  --ghost: #dcbda2;
+  --page-hero-from: #e9d0b6;
+  --deep-from: #4e2f4b;
+  --deep-to: #392037;
+  --deep-fg: #f1e4da;
+  --deep-muted: #e9d0b6;
+  --deep-accent: #e9d0b6;
+  --deep-serif: #e9d0b6;
+  --deep-line: #8d7189;
   --deep-veil: #ffffff14;
-  --shadow-card: 0 3px 14px rgb(60 24 48 / 7%);
-  --shadow-lift: 0 26px 54px rgb(60 24 48 / 16%);
-  --frame: #ffffff;
-  --frame-line: #e8dee5;
-  --frame-shadow: 0 14px 44px rgb(60 24 48 / 14%);
-  --deco: #c6a9c0;
-  --deco-soft: #e4d2df;
-  --deco-orb: #ecd4e4;
-  --stamp-bg: #eed6e6;
-  --stamp-line: #dbbad2;
-  --focus: #9c4f83;
-  --progress-from: #b874a1;
-  --progress-to: #5d2249;
-  --ring: #923e79;
+  --shadow-card: 0 3px 14px rgb(78 47 75 / 8%);
+  --shadow-lift: 0 26px 54px rgb(78 47 75 / 16%);
+  --frame: #fffaf6;
+  --frame-line: #e9d0b6;
+  --frame-shadow: 0 14px 44px rgb(78 47 75 / 16%);
+  --deco: #c4a990;
+  --deco-soft: #e9d0b6;
+  --deco-orb: #e9d0b6;
+  --stamp-bg: #e9d0b6;
+  --stamp-line: #c9a98f;
+  --focus: #8b6585;
+  --progress-from: #e9d0b6;
+  --progress-to: #4e2f4b;
+  --ring: #8b6585;
   --radius: 0.75rem;
   --font-serif:
     'Playfair Display', Georgia, 'Apple SD Gothic Neo', 'Malgun Gothic', serif;
@@ -2442,3 +2442,152 @@ h2 {
     animation: none !important;
   }
 }
+
+/* 2026 Chaeum brand: plum, beige, cream and the supplied artwork. */
+.header,
+.header.is-scrolled {
+  background: var(--plum);
+  border-bottom-color: color-mix(in srgb, var(--beige, #e9d0b6) 35%, transparent);
+  color: #f1e4da;
+}
+.header nav a,
+.header nav a:hover,
+.header nav a[aria-current] { color: #f1e4da; }
+.header nav a::after { background: #e9d0b6; }
+.brand { display: block; position: relative; flex: 0 0 185px; width: 185px; height: 73px; overflow: hidden; }
+.brand-logo { position: absolute; width: 185px; max-width: none; height: auto; left: 0; top: 50%; transform: translateY(-50%); }
+.nav-contact { background: #e9d0b6; color: #4e2f4b; font-weight: 700; }
+.nav-contact:hover { background: #f1e4da; color: #4e2f4b; }
+.mobile-menu-trigger { background: transparent; border-color: #e9d0b680; color: #f1e4da; }
+.mobile-menu-title { color: #f1e4da !important; }
+.mobile-menu-close { color: #f1e4da; }
+.mobile-panel { background: #4e2f4b !important; }
+.mobile-menu-description { color: #e9d0b6 !important; }
+.mobile-links a span,
+.mobile-menu-footer { color: #e9d0b6; }
+.reading-progress { background: linear-gradient(90deg,#e9d0b6,#f1e4da); }
+.hero {
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  min-height: 680px;
+  gap: clamp(18px, 3vw, 56px);
+}
+.hero h1 { color: #3e2a3d; }
+.hero .on-word { color: #4e2f4b; }
+.on-word svg { stroke: #c39f82; }
+.hero-art { height: min(45vw, 565px); min-height: 470px; isolation: isolate; }
+.hero-art-panel {
+  position: absolute;
+  inset: 7% 4% 7% 9%;
+  border-radius: 36px 120px 36px 120px;
+  background: linear-gradient(140deg,#e9d0b6,#f1e4da 75%);
+  border: 1px solid #d9bea6;
+  box-shadow: 0 28px 66px #4e2f4b21;
+  transform: rotate(-3deg);
+}
+.hero-collage {
+  position: absolute;
+  z-index: 2;
+  width: 113%;
+  max-width: none;
+  height: auto;
+  right: -7%;
+  top: 4%;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 22px #4e2f4b24);
+  animation: brand-float 9s ease-in-out infinite;
+}
+.hero-art-mark {
+  position: absolute;
+  z-index: 1;
+  right: 2%;
+  bottom: 4%;
+  font: 800 clamp(95px, 15vw, 200px)/1 Arial,sans-serif;
+  letter-spacing: -.09em;
+  color: #4e2f4b12;
+  user-select: none;
+}
+.hero-art-kicker {
+  position: absolute;
+  z-index: 3;
+  bottom: 4%;
+  left: 13%;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  color: #4e2f4b;
+}
+.hero::before { background: radial-gradient(circle,#e9d0b6 0 28%,transparent 68%); }
+.hero::after { border-color: #e9d0b6; box-shadow: 0 0 0 34px #e9d0b63b, 0 0 0 69px #e9d0b61c; }
+.mini-spark { color: #a27c65; }
+.promise-strip { background: #4e2f4b; color: #f1e4da; }
+.promise-item em,
+.promise-item i { color: #e9d0b6; }
+.program-card { background: #fff8f2; border-color: #dec4af; }
+.program-card.green { background: #f8ecdf; }
+.program-card.purple { background: #f7e9e1; }
+.program-card.peach { background: #faeadc; }
+.program-card.yellow { background: #f4e5d4; }
+.program-card li { background: #f1e4da; border-color: #dfc4ad; }
+.program-card::after { background: #e9d0b67a; }
+.method-section { background: #4e2f4b; color: #f1e4da; }
+.method-section .eyebrow,
+.method-layout h2,
+.method-quote,
+.method-section .text-link,
+.step-number,
+.step h3 span,
+.step-arrow { color: #e9d0b6; }
+.method-layout p,
+.step p { color: #f1e4da; }
+.step { border-bottom-color: #e9d0b659; }
+.custom-image { padding: 24px; border: 1px solid #d7b99f; background: #e9d0b6; border-radius: 68px 14px 68px 14px; box-shadow: 0 20px 45px #4e2f4b16; }
+.custom-image img { width: 100%; height: auto; aspect-ratio: 1.5; object-fit: contain; border-radius: 0; }
+.moments { background: #e9d0b6; }
+.moments-grid figure > div { background: #f1e4da; }
+.contact-box { background: linear-gradient(145deg,#4e2f4b,#392037); color: #f1e4da; }
+.contact-box .eyebrow,
+.contact-details small { color: #e9d0b6; }
+.contact-box p { color: #f1e4da; }
+.contact-form { background: #f1e4da; color: #4e2f4b; }
+.contact-form input,
+.contact-form select,
+.contact-form textarea { background: #fffaf6; border-color: #d1b296; }
+.footer { background: #4e2f4b; color: #f1e4da; }
+.footer-logo { display: block; width: 180px; height: auto; margin: -36px 0 -43px -18px; }
+.footer-about p,
+.footer-col a { color: #f1e4da; }
+.footer-col h3,
+.footer-bottom { color: #e9d0b6; }
+.page-hero { background: linear-gradient(180deg,#e9d0b6,#f1e4da); }
+.page-hero-tabs a { background: #fff8f2; border-color: #d9bfa9; }
+.program-detail,
+.program-detail.green,
+.program-detail.purple,
+.program-detail.peach,
+.program-detail.yellow,
+.value-card,
+.process-card { border-color: #dfc7b3; }
+@keyframes brand-float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-11px) } }
+@media (max-width: 1000px) {
+  .header { gap: 18px; }
+  .brand { flex-basis: 150px; width: 150px; height: 65px; }
+  .brand-logo { width: 150px; }
+}
+@media (max-width: 850px) {
+  .hero { grid-template-columns: 1fr; min-height: 0; gap: 14px; }
+  .hero-art { width: min(590px,100%); height: min(73vw,480px); min-height: 310px; }
+  .hero-collage { width: 112%; right: -6%; top: 0; }
+  .hero-art-kicker { bottom: 4%; font-size: 11px; }
+  .custom-image img { aspect-ratio: 1.5; border-radius: 0; }
+  .footer-logo { width: 160px; }
+}
+@media (max-width: 520px) {
+  .brand { flex-basis: 132px; width: 132px; height: 52px; }
+  .brand-logo { width: 132px; }
+  .hero-art { height: 81vw; min-height: 275px; }
+  .hero-art-panel { inset: 10% 3% 11% 3%; border-radius: 25px 70px 25px 70px; }
+  .hero-collage { width: 119%; right: -9%; top: 4%; }
+  .hero-art-kicker { left: 9%; bottom: 5%; font-size: 9px; letter-spacing: .08em; }
+  .custom-image { padding: 12px; border-radius: 35px 10px 35px 10px; }
+}
+@media (prefers-reduced-motion: reduce) { .hero-collage { animation: none; } }

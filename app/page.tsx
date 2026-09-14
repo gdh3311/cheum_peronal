@@ -7,7 +7,6 @@ import {
   MessagesSquare,
   PencilRuler,
   School,
-  Sparkles,
 } from 'lucide-react';
 import Link from 'next/link';
 import { ContactBox, FaqList } from './chrome';
@@ -84,43 +83,10 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-art">
-          <div className="art-grid" aria-hidden="true" />
-          <span className="art-note">
-            A little curiosity,
-            <br />
-            <em>a world of possibilities.</em>
-          </span>
-          <div className="photo-main">
-            <img
-              src="/images/explore.webp"
-              alt="로봇과 노트북을 활용하는 진로체험 프로그램 소개 이미지"
-              fetchPriority="high"
-              decoding="async"
-            />
-            <span>
-              내가 만드는, 나의 가능성 <ArrowUpRight size={16} />
-            </span>
-          </div>
-          <div className="photo-small">
-            <img
-              src="/images/make.webp"
-              alt="함께 만들고 탐구하는 수업 소개 이미지"
-              decoding="async"
-            />
-            <span>LET’S TRY SOMETHING NEW</span>
-          </div>
-          <div className="round-stamp">
-            <Sparkles size={28} />
-            <span>
-              생각이 자라는
-              <br />
-              <b>경험의 힘</b>
-            </span>
-          </div>
-          <span className="art-star" aria-hidden="true">
-            ✳
-          </span>
-          <span className="art-caption">LEARN. TRY. EXPAND. CREATE.</span>
+          <div className="hero-art-panel" aria-hidden="true" />
+          <img className="hero-collage" src="/brand/experience-collage.png" alt="디지털 드로잉, 로봇 제작, 협업 활동과 과학 실험에 참여하는 아이들" width="1536" height="1024" fetchPriority="high" decoding="async" />
+          <span className="hero-art-kicker">EXPERIENCE MAKES THE DIFFERENCE</span>
+          <span className="hero-art-mark" aria-hidden="true">ON</span>
         </div>
       </section>
       <div className="promise-strip" aria-label="채움 ON 프로그램 특징">
@@ -180,7 +146,7 @@ export default function Home() {
               </ul>
               <div className="card-meta">
                 <span>{p.grade}</span>
-                <span>2차시 · 80–90분</span>
+                <span>2차시 · 80분</span>
                 <span>{p.tools}</span>
                 {p.note && <small>{p.note}</small>}
               </div>
@@ -266,12 +232,11 @@ export default function Home() {
         <div className="custom-grid">
           <div className="custom-image">
             <img
-              src="/images/learn.webp"
-              alt="만들기 활동을 함께하는 저학년 체험 수업 소개 이미지"
+              src="/brand/experience-icons.png"
+              alt="진로탐색, 직업체험, 문제해결, 협업, 진로설계, 역량개발의 여섯 가지 체험 가치"
               loading="lazy"
               decoding="async"
             />
-            <span>각자의 속도로, 함께 자라는 시간.</span>
           </div>
           <div className="custom-info">
             <div>

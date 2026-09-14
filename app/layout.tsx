@@ -33,8 +33,8 @@ export default function RootLayout({
     <html lang="ko">
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <meta name="theme-color" content="#62264e" />
-        <link rel="preload" as="image" href="/images/explore.webp" />
+        <meta name="theme-color" content="#4e2f4b" />
+        <link rel="preload" as="image" href="/brand/experience-collage.png" />
         <link
           rel="preconnect"
           href="https://cdn.jsdelivr.net"

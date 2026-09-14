@@ -7,7 +7,6 @@ import {
   Mail,
   Phone,
   Plus,
-  Power,
 } from 'lucide-react';
 import Link from 'next/link';
 import { MobileNavigation } from './motion';
@@ -17,13 +16,7 @@ export function SiteHeader() {
   return (
     <header className="header">
       <Link href="/" className="brand" aria-label="채움크리에이티브 홈">
-        <span className="brand-symbol">
-          <Power size={23} />
-        </span>
-        <span>
-          chaeum<span className="brand-on">ON</span>
-          <small>채움크리에이티브</small>
-        </span>
+        <img className="brand-logo" src="/brand/logo-cream.png" alt="채움 ON" width="612" height="408" />
       </Link>
       <nav aria-label="주 메뉴">
         {navLinks.map(([href, label]) => (
@@ -48,10 +41,7 @@ export function SiteFooter() {
       <div className="wrap footer-grid">
         <div className="footer-about">
           <Link className="footer-brand" href="/">
-            <span className="brand-symbol">
-              <Power size={19} />
-            </span>
-            chaeum ON
+            <img className="footer-logo" src="/brand/logo-cream.png" alt="채움 ON" width="612" height="408" loading="lazy" />
           </Link>
           <p>
             학교로 찾아가는 진로직업체험, 채움크리에이티브.
