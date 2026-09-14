@@ -17,7 +17,7 @@ const processSteps = [
     icon: MessagesSquare,
     en: 'CONTACT',
     title: '문의 · 상담',
-    description: '전화 또는 메일로 희망 일정, 학년, 인원을 알려주세요.',
+    description: '신청서에 수업 유형과 희망 일정, 학년, 인원을 알려주세요.',
   },
   {
     icon: PencilRuler,

@@ -6,6 +6,8 @@ export const contact = {
   email: 'chaeum-lab@naver.com',
   mailto: 'mailto:chaeum-lab@naver.com',
   blog: 'https://blog.naver.com/chaeum-lab',
+  applicationUrl:
+    'https://docs.google.com/forms/d/e/1FAIpQLSepNxdVZPBmoO5L-ETWwhhHbh9Ev6gHfaJC4DwYeRygKTZ1ww/viewform',
 };
 
 export const navLinks = [

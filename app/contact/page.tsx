@@ -1,11 +1,12 @@
+import { ArrowUpRight } from 'lucide-react';
 import type { Metadata } from 'next';
 import { ContactBox, FaqList } from '../chrome';
-import { faqs } from '../site';
+import { contact, faqs } from '../site';
 
 export const metadata: Metadata = {
-  title: '수업 문의',
+  title: '수업 신청·문의',
   description:
-    '채움 ON 진로직업체험 수업 문의. 희망 학년, 인원, 일정을 알려주시면 학교에 맞는 프로그램을 함께 구성해 드립니다.',
+    '채움 ON 교육·체험 신청 및 문의. 신청 유형과 희망 일정 등을 구글폼으로 남겨주시면 프로그램 구성과 비용을 안내드립니다.',
 };
 
 export default function ContactPage() {
@@ -13,17 +14,20 @@ export default function ContactPage() {
     <>
       <section className="page-hero">
         <div className="wrap">
-          <span className="eyebrow">CONTACT</span>
+          <span className="eyebrow">APPLICATION · CONTACT</span>
           <h1>
-            문의는 가볍게,
+            우리 학교의 다음 경험,
             <br />
-            상담은 꼼꼼하게.
+            여기서 시작해요.
           </h1>
           <p>
-            아직 정해진 것이 없어도 괜찮습니다.
+            프로그램을 골랐거나, 아직 고민 중이어도 괜찮습니다.
             <br />
-            학년과 인원만 알려주셔도 상담을 시작할 수 있어요.
+            신청서를 남겨주시면 맞는 수업을 함께 찾겠습니다.
           </p>
+          <a className="button primary contact-hero-action" href={contact.applicationUrl} target="_blank" rel="noopener noreferrer">
+            신청서 바로 작성하기 <ArrowUpRight size={18} />
+          </a>
         </div>
       </section>
       <section className="contact-section wrap">

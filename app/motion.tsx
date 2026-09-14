@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/sheet';
 import { navLinks } from './site';
 
-const links = [...navLinks, ['/contact', '수업 문의하기'] as const];
+const links = [...navLinks, ['/contact', '수업 신청·문의'] as const];
 
 /**
  * Client-side navigation lands at the top of the new page even when the URL

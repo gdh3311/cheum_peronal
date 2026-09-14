@@ -808,80 +808,123 @@ h2 {
   justify-content: space-between;
   max-width: 300px;
 }
-.contact-form {
-  background: var(--surface);
-  color: var(--foreground);
-  border-radius: 16px;
-  padding: 34px 32px 30px;
+.application-card {
+  background: var(--background);
+  color: var(--plum);
+  border-radius: 18px;
+  padding: 36px 34px 32px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
   box-shadow: 0 30px 70px rgb(28 8 21 / 30%);
   position: relative;
   z-index: 1;
 }
-.contact-form h3 {
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+.application-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--plum-soft);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+.application-platform {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  white-space: nowrap;
+  letter-spacing: 0;
+  color: var(--plum);
+}
+.application-card h3 {
+  font-size: 24px;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  margin-top: 2px;
+}
+.contact-box .application-card .application-intro {
+  color: var(--plum-soft);
+  font-size: 14px;
+  margin-top: -12px;
+}
+.application-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #d7bda9;
+}
+.application-steps li {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid #d7bda9;
+}
+.application-steps li > span {
+  color: #a67a5f;
+  font: 600 16px/1.5 var(--font-serif);
+}
+.application-steps strong {
+  display: block;
+  font-size: 14px;
   margin-bottom: 2px;
 }
-.contact-form label {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--ink-2);
-}
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  padding: 12px 13px;
-  font:
-    500 14.5px 'Pretendard Variable',
-    Pretendard,
-    -apple-system,
-    'Malgun Gothic',
-    sans-serif;
-  background: var(--field-bg);
-  color: var(--foreground);
-  width: 100%;
-  transition:
-    border-color 0.2s,
-    box-shadow 0.2s;
-}
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: var(--ring);
-  box-shadow: 0 0 0 3px rgb(146 62 121 / 13%);
-}
-.contact-form ::placeholder {
-  color: var(--ink-3);
-}
-.contact-form textarea {
-  resize: vertical;
-  min-height: 92px;
-}
-.form-submit {
-  margin-top: 5px;
-  justify-content: center;
-  gap: 10px;
-}
-.contact-form small {
+.contact-box .application-card .application-steps p {
+  color: var(--plum-soft);
   font-size: 12px;
-  color: var(--ink-3);
-  text-align: center;
-  font-weight: 400;
+  line-height: 1.55;
+}
+.application-types {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  margin-top: -2px;
+}
+.application-types small {
+  color: var(--plum-soft);
+  font-size: 11px;
+  font-weight: 700;
+  margin-right: 3px;
+}
+.application-types span {
+  padding: 6px 10px;
+  border-radius: 100px;
+  background: #e9d0b6;
+  color: var(--plum);
+  font-size: 11px;
+  font-weight: 700;
+}
+.application-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  border-radius: 10px;
+  background: var(--plum);
+  color: var(--background);
+  font-size: 15px;
+  font-weight: 750;
+  transition: transform 0.2s, background 0.2s;
+}
+.application-link:hover {
+  transform: translateY(-2px);
+  background: var(--plum-deep);
+}
+.contact-box .application-card .application-note {
+  color: var(--plum-soft);
+  font-size: 11px;
+  line-height: 1.6;
+  margin-top: -10px;
+}
+.contact-hero-action {
+  display: inline-flex;
+  gap: 22px;
+  width: fit-content;
+  margin-top: 26px;
 }
 .footer {
   position: relative;
@@ -1190,16 +1233,8 @@ h2 {
   .contact-details > a {
     font-size: 16px;
   }
-  .contact-form {
+  .application-card {
     padding: 26px 22px 24px;
-  }
-  .contact-form input,
-  .contact-form select,
-  .contact-form textarea {
-    font-size: 16px;
-  }
-  .form-row {
-    grid-template-columns: 1fr;
   }
   .eyebrow {
     font-size: 12px;
@@ -2542,10 +2577,6 @@ h2 {
 .contact-box .eyebrow,
 .contact-details small { color: #e9d0b6; }
 .contact-box p { color: #f1e4da; }
-.contact-form { background: #f1e4da; color: #4e2f4b; }
-.contact-form input,
-.contact-form select,
-.contact-form textarea { background: #fffaf6; border-color: #d1b296; }
 .footer { background: #4e2f4b; color: #f1e4da; }
 .footer-logo { display: block; width: 180px; height: auto; margin: -36px 0 -43px -18px; }
 .footer-about p,
