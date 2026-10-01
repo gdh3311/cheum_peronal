@@ -141,6 +141,28 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
+      <section className="section wrap">
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow">CHAEUM CREATIVE</span>
+            <h2>호기심에서 시작되는 다양한 교육.</h2>
+          </div>
+          <p>채움크리에이티브는 진로직업체험과<br />방과후·메이커 교육을 함께 운영합니다.</p>
+        </div>
+        <div className="values-grid">
+          {[
+            ['방과후 교육', '독서논술, 컴퓨터, 코딩, 토탈공예, 한글깨치기, 보드게임'],
+            ['창의융합 · 메이커', '디지털 리터러시, 생성형 AI 수업, 로봇, 과학, 메이커'],
+            ['진로직업체험', '학교로 찾아가는 직업 체험과 진로캠프'],
+          ].map(([title, description], i) => (
+            <article className="value-card" key={title}>
+              <span className="value-index">0{i + 1}</span>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
       <section className="section wrap page-cta">
         <div className="page-cta-box">
           <h2>우리 학교의 다음 배움, 함께 만들어요.</h2>

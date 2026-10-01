@@ -1,7 +1,7 @@
 import { ArrowUpRight, Clock3, GraduationCap, Package } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { programs } from '../site';
+import { classDuration, programCount, programs } from '../site';
 
 export const metadata: Metadata = {
   title: '체험 프로그램',
@@ -18,7 +18,7 @@ export default function ProgramsPage() {
           <h1>
             다섯 가지 분야,
             <br />
-            수십 가지 직업의 세계.
+            {programCount}가지 직업의 세계.
           </h1>
           <p>
             모든 프로그램은 학교로 찾아가는 방문형 수업으로,
@@ -52,9 +52,9 @@ export default function ProgramsPage() {
               <h2 id={`${p.slug}-title`}>{p.title}</h2>
               <p className="detail-intro">{p.intro}</p>
               {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
-              <ul className="detail-jobs" role="list">
-                {p.jobs.map((j) => (
-                  <li key={j}>{j}</li>
+              <ul className="detail-activities" role="list">
+                {p.activities.map(([job, activity]) => (
+                  <li key={job}><strong>{job}</strong><span>{activity}</span></li>
                 ))}
               </ul>
             </div>
@@ -72,7 +72,7 @@ export default function ProgramsPage() {
                 <dt>
                   <Clock3 size={16} /> 시간
                 </dt>
-                <dd>2차시 · 80분 (조정 가능)</dd>
+                <dd>{classDuration}<small>학교 일정에 맞춰 조정 가능</small></dd>
               </div>
               <div>
                 <dt>

@@ -2216,6 +2216,22 @@ h2 {
   flex-direction: column;
   gap: 18px;
 }
+.detail-activities {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 0;
+  display: grid;
+  gap: 12px;
+}
+.detail-activities li {
+  display: grid;
+  gap: 4px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  overflow-wrap: anywhere;
+}
+.detail-activities strong { font-size: 15px; color: var(--plum-ink); }
+.detail-activities span { font-size: 14px; color: var(--ink-2); }
 .detail-meta dt {
   display: flex;
   align-items: center;

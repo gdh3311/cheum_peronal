@@ -10,34 +10,34 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { ContactBox, FaqList } from './chrome';
-import { faqs, moments, programs } from './site';
+import { classDuration, faqs, moments, programCount, programs } from './site';
 
 const processSteps = [
   {
     icon: MessagesSquare,
     en: 'CONTACT',
-    title: '문의 · 상담',
+    title: '신청 · 문의',
     description: '신청서에 수업 유형과 희망 일정, 학년, 인원을 알려주세요.',
   },
   {
     icon: PencilRuler,
     en: 'DESIGN',
-    title: '맞춤 설계',
+    title: '학교 맞춤 상담',
     description:
-      '학교의 교육목표에 맞춰 프로그램과 차시를 구성해 안내드립니다.',
+      '학교 상황과 운영 목적을 확인하고 맞는 수업을 함께 찾습니다.',
   },
   {
     icon: School,
     en: 'CLASS DAY',
-    title: '찾아가는 수업',
-    description: '강사와 수업 재료가 학교로 찾아가 수업을 진행합니다.',
+    title: '프로그램 구성',
+    description: '학년과 시간, 참여 인원에 맞춰 프로그램을 조정하고 확정합니다.',
   },
   {
     icon: Award,
     en: 'FOLLOW-UP',
-    title: '마무리 · 피드백',
+    title: '찾아가는 수업',
     description:
-      '아이들의 결과물과 수업 이야기를 공유하며 다음 배움을 제안합니다.',
+      '강사와 수업 재료가 학교로 찾아가 체험과 결과물 중심 수업을 진행합니다.',
   },
 ];
 
@@ -71,10 +71,10 @@ export default function Home() {
             </a>
             <a
               href="/catalog.pdf"
-              download="채움크리에이티브 카탈로그.pdf"
+              download="채움크리에이티브 카탈로그V2.pdf"
               className="catalog-link"
             >
-              카탈로그 <Download size={17} />
+              카탈로그 V2 <Download size={17} />
             </a>
           </div>
           <div className="hero-foot">
@@ -121,7 +121,7 @@ export default function Home() {
             <h2>어떤 가능성을 만나볼까요?</h2>
           </div>
           <p>
-            다섯 가지 분야, 다양한 직업의 세계.
+            다섯 가지 분야, {programCount}가지 직업의 세계.
             <br />
             아이의 관심에서 새로운 경험이 시작됩니다.
           </p>
@@ -146,7 +146,7 @@ export default function Home() {
               </ul>
               <div className="card-meta">
                 <span>{p.grade}</span>
-                <span>2차시 · 80분</span>
+                <span>{classDuration}</span>
                 <span>{p.tools}</span>
                 {p.note && <small>{p.note}</small>}
               </div>
