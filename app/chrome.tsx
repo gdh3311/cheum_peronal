@@ -77,7 +77,7 @@ export function SiteFooter() {
           <a href={contact.blog} target="_blank" rel="noreferrer">
             네이버 블로그 <ArrowUpRight size={14} />
           </a>
-          <a href="/catalog.pdf" download="채움크리에이티브 카탈로그V2.pdf">
+          <a href="/catalog.pdf" download="채움크리에이티브 카탈로그.pdf">
             카탈로그 다운로드 <Download size={14} />
           </a>
         </div>

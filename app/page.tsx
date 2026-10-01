@@ -71,10 +71,10 @@ export default function Home() {
             </a>
             <a
               href="/catalog.pdf"
-              download="채움크리에이티브 카탈로그V2.pdf"
+              download="채움크리에이티브 카탈로그.pdf"
               className="catalog-link"
             >
-              카탈로그 V2 <Download size={17} />
+              카탈로그 <Download size={17} />
             </a>
           </div>
           <div className="hero-foot">
